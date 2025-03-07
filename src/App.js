@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from './components/card/Card';
+import Hero from './components/hero/Hero';
+import MarvelNavBar from './components/navBar/NavBar';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <MarvelNavBar title="Marvel Hero" />
+            <header>
+                <Hero />
+            </header>
+            <main>
+                <h1>Marvel App</h1>
+
+                <div
+                    id="section-cards"
+                    className="section-cards"
+                >
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                </div>
+            </main>
+        </div>
+    );
 }
 
 export default App;

@@ -1,0 +1,38 @@
+.bgColor{
+    background-image: linear-gradient(to bottom, #FF0000 0%, #FFC0CB 40%, #FF0000 100%);
+    color: white !important;
+    border-bottom: 1px solid #fff;
+    box-shadow: 0 0 0.98rem #fff;
+}
+
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+.titleNavBar{
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+
+.imgAnimationScale {
+    transition: transform 0.3s ease !important;
+}
+
+.imgAnimationScale:hover {
+    animation: scale-effect-img 0.3s ease forwards !important;
+}
+
+@keyframes scale-effect-img {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
