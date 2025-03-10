@@ -15,8 +15,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden !important;
     color: #ffffff !important;
-    background-image: linear-gradient(to right, #222222 0%, #F57988 50%, #222222 100%) !important;
-
+    background-image: linear-gradient(
+        to right,
+        #222222 0%,
+        #f57988 50%,
+        #222222 100%
+    ) !important;
 }
 
 code {
@@ -25,39 +29,39 @@ code {
         'Courier New', monospace;
 }
 
-header{
-margin: 17rem auto;
-display: flex !important;
-justify-content: center !important;
-align-items: center !important;
-gap: 3rem !important;
+header {
+    margin: 17rem auto;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 3rem !important;
 }
 
-main{
+main {
     margin: 17rem auto;
     color: #ffffff;
     text-align: center;
 }
 
-#section-cards{
+/* #section-cards{
 display: flex;
 justify-content: center;
 align-items: center;
 gap: 11rem;
 flex-wrap: wrap;
 }
-
+ */
 
 @media only screen and (max-width: 1024px) {
     #section-cards {
-            gap: 2rem;
+        gap: 2rem;
     }
 }
 
 @media only screen and (max-width: 768px) {
     #section-cards {
-            gap: 5rem;
-        }
+        gap: 5rem;
+    }
 }
 
 @media only screen and (max-width: 430px) {
@@ -67,8 +71,11 @@ flex-wrap: wrap;
     }
 }
 
-@media only screen and (max-width: 425px) {}
+@media only screen and (max-width: 425px) {
+}
 
-@media only screen and (max-width: 375px) {}
+@media only screen and (max-width: 375px) {
+}
 
-@media only screen and (max-width: 320px) {}
+@media only screen and (max-width: 320px) {
+}

@@ -1,6 +1,7 @@
-import Card from './components/card/Card';
 import Hero from './components/hero/Hero';
+import Loading from './components/load/Loading';
 import MarvelNavBar from './components/navBar/NavBar';
+import MarvelCharacters from './pages/MarvelCharacters';
 
 function App() {
     return (
@@ -10,18 +11,8 @@ function App() {
                 <Hero />
             </header>
             <main>
-                <h1>Marvel App</h1>
-
-                <div
-                    id="section-cards"
-                    className="section-cards"
-                >
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                    <Card />
-                </div>
+                <Loading />
+                <MarvelCharacters />
             </main>
         </div>
     );

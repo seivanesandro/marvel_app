@@ -1,22 +1,25 @@
-.bgColor{
-    background-image: linear-gradient(to bottom, #FF0000 0%, #FFC0CB 40%, #FF0000 100%);
+.bgColor {
+    background-image: linear-gradient(
+        to bottom,
+        #ff0000 0%,
+        #ffc0cb 40%,
+        #ff0000 100%
+    );
     color: white !important;
-    border-bottom: 1px solid #fff;
-    box-shadow: 0 0 0.98rem #fff;
+    border-bottom: 1px solid #fff !important;
+    box-shadow: 0 0 0.98rem #ffc0cb !important;
 }
 
-
-.logo{
+.logo {
     width: 100px;
     height: 100px;
 }
 
-.titleNavBar{
+.titleNavBar {
     font-size: 1.7rem;
     font-weight: bold;
     margin-left: 10px;
 }
-
 
 .imgAnimationScale {
     transition: transform 0.3s ease !important;
@@ -35,4 +38,3 @@
         transform: scale(1.1);
     }
 }
-

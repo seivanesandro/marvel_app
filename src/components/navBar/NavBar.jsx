@@ -4,13 +4,15 @@ import { useMediaQuery } from 'react-responsive';
 import logo from '../../assets/logo.png';
 import styles from './NavBar.module.css';
 
-function MarvelNavBar({title}) {
-      //TODO: useMediaQuery a librarie to use responnsive breack-poinnts with ES6
-  const isMobile = useMediaQuery({ query: "(max-width: 450px)" });
+function MarvelNavBar({ title }) {
+    //TODO: useMediaQuery a librarie to use responnsive breack-poinnts with ES6
+    const isMobile = useMediaQuery({
+        query: '(max-width: 450px)'
+    });
 
-   const handleClick = () => {
-       window.location.reload();
-   };
+    const handleClick = () => {
+        window.location.reload();
+    };
 
     return (
         <>
