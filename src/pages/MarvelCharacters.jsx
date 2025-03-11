@@ -15,32 +15,8 @@ const ContainerStatus = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-right: 122px;
+    margin: 3rem auto;
 
-    @media only screen and (${devices.fourk}) {
-        margin-right: 100px;
-    }
-    @media only screen and (${devices.portatilL}) {
-        margin-right: 58px;
-    }
-    @media only screen and (${devices.portatil}) {
-        margin-right: 60px;
-    }
-    @media only screen and (${devices.tablet}) {
-        margin-right: 85px;
-    }
-    @media only screen and (${devices.iphone14}) {
-        margin-right: 60px;
-    }
-    @media only screen and (${devices.mobileG}) {
-        margin-right: 60px;
-    }
-    @media only screen and (${devices.mobileM}) {
-        margin-right: 48px;
-    }
-    @media only screen and (${devices.mobileP}) {
-        margin-right: 7px;
-    }
 `;
 
 const SectionCards = styled.div`

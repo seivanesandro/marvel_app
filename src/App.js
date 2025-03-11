@@ -1,5 +1,5 @@
 import Hero from './components/hero/Hero';
-import Loading from './components/load/Loading';
+//import Modal from './components/modal/Modal';
 import MarvelNavBar from './components/navBar/NavBar';
 import MarvelCharacters from './pages/MarvelCharacters';
 
@@ -11,8 +11,8 @@ function App() {
                 <Hero />
             </header>
             <main>
-                <Loading />
                 <MarvelCharacters />
+                {/* <Modal /> */}
             </main>
         </div>
     );
