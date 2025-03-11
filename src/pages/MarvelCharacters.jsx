@@ -70,6 +70,7 @@ const MarvelCharacters = props => {
                 'https://gateway.marvel.com/v1/public/characters',
                 {
                     params: {
+                        nameStartsWith: 'spider',
                         ts: ts,
                         apikey: publicKey,
                         hash: hash
