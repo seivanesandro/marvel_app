@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 //import PropTypes from 'prop-types'
 import marvel from '../../assets/marvel.jpg';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { devices } from '../../utils/constantes';
 
 const HeroContainer = styled.div`
@@ -42,7 +42,7 @@ const H1Style = styled.h1`
         3px -3px 2px #f7b733,
         -3px 3px 2px #f7b733,
         3px 3px 2px #f7b733;
-    
+
     @media only screen and (${devices.iphone14}) {
         font-size: 3rem !important;
     }
@@ -69,6 +69,7 @@ const InputSearch = styled.input`
     box-shadow: 0 0 0.3rem transparent !important;
     border: none !important;
     transition: outline 0.2s ease;
+    text-align: center;
 
     &:hover {
         outline: double #ed213a !important;
@@ -84,6 +85,9 @@ const InputSearch = styled.input`
         outline: double #ed213a !important;
         color: #ed213a !important;
         font-weight: 600 !important;
+    }
+    &::placeholder {
+        text-align: center;
     }
 
     @media only screen and (${devices.portatil}) {
@@ -129,24 +133,50 @@ const BtnStyle = styled.button`
     }
 `;
 
-const Hero = props => {
+const Hero = ({
+    title,
+    welcomeparagraph,
+    titlebtn,
+    setSearch,
+    handleSearchClick
+}) => {
+    const [name, setName] = useState('');
+
+    const handleNameCharacter = e => {
+        setName(e.target.value);
+    };
+
+    const handleSearchCharacter = e => {
+        e.preventDefault();
+        setSearch(name);
+        handleSearchClick();
+    };
+
     return (
         <>
             <HeroContainer className="hero-container">
                 <HeroText className="hero-text">
                     <H1Style className="h1-style">
-                        Marvel Hero´s
+                        {title}
                     </H1Style>
                     <Pstyle className="p-style">
-                        Find your favorite Marvel
-                        Hero
+                        {welcomeparagraph}
                     </Pstyle>
                     <InputSearch
                         type="text"
                         className="form-control input-search"
+                        placeholder="search for Hero´s"
+                        onChange={
+                            handleNameCharacter
+                        }
                     />
-                    <BtnStyle className="btn btn-danger d-grid gap-2 d-lg-block">
-                        search for Hero's
+                    <BtnStyle
+                        className="btn btn-danger d-grid gap-2 d-lg-block"
+                        onClick={
+                            handleSearchCharacter
+                        }
+                    >
+                        {titlebtn}
                     </BtnStyle>
                 </HeroText>
             </HeroContainer>

@@ -2,7 +2,6 @@ import React from 'react';
 import styled, {
     keyframes
 } from 'styled-components';
-import wanda from '../../assets/wanda.jpg';
 import { devices } from '../../utils/constantes';
 
 const Show = keyframes`
@@ -37,7 +36,8 @@ const ModalContainer = styled.div`
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: ${Show} 0.4s ease-in;
 `;
 
 const ModalContent = styled.div`
@@ -46,11 +46,11 @@ const ModalContent = styled.div`
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    border-radius: 6px;
+    border-radius: 10px;
     gap: 1rem;
     animation:
         ${Show} 0.7s ease-in,
-        ${Scale} 5ms ease-out;
+        ${Scale} 0.3s ease-in;
 
     @media only screen and (${devices.portatilL}) {
         margin: 16% auto 8% auto;
@@ -71,6 +71,7 @@ const ModalContent = styled.div`
         margin: 8% auto 69% auto !important;
     }
 `;
+
 const CloseModal = styled.button`
     display: block;
     position: absolute;
@@ -78,6 +79,9 @@ const CloseModal = styled.button`
     right: 5rem;
     font-size: 2rem;
     cursor: pointer;
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
 
     @media only screen and (${devices.portatilL}) {
         right: 4rem;
@@ -109,18 +113,22 @@ const ModalBody = styled.div`
 
 const ImageHero = styled.img`
     &.image-hero {
-        border: 2px solid transparent;
-        border-radius: 6px;
+        border: 2px solid #ed213a;
+        box-shadow: 0 0 0.3rem 0.1rem transparent;
+        border-radius: 10px;
         height: 30rem;
     }
 
     &:hover {
-        border: 4px solid #ed213a;
-        box-shadow: 0 0 0.8rem 0.1rem #ed213a;
+        border: 2px solid #ed213a;
+        box-shadow: 0 0 0.7rem 0.1rem #ed213a;
     }
 
     @media only screen and (${devices.iphone14}) {
         height: 25rem !important;
+        &.img-fluid {
+            width: 93% !important;
+        }
     }
     @media only screen and (${devices.mobileP}) {
         height: 20rem !important;
@@ -151,42 +159,41 @@ const DescriptionHero = styled.p`
     }
 `;
 
-const Modal = () => {
+const Modal = ({
+    heroDataImg,
+    heroDataname,
+    heroDatadescription,
+    setShow
+}) => {
     return (
         <>
-            <ModalContainer className="container-fluid modal-container">
+            <ModalContainer
+                className="container-fluid modal-container"
+                onClick={() => setShow(false)}
+            >
                 <ModalContent className="modal-content">
                     <div className="modal-header">
                         <CloseModal
                             type="button"
                             className="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
                             title="close"
+                            onClick={() =>
+                                setShow(false)
+                            }
                         ></CloseModal>
                     </div>
                     <ModalBody className="modal-body">
                         <ImageHero
-                            src={wanda}
-                            alt="hero-name"
-                            title="hero-name"
+                            src={heroDataImg}
+                            alt={heroDataname}
+                            title={heroDataname}
                             className="img-fluid image-hero"
                         />
                         <TitleHero className="title-hero">
-                            hero
+                            {heroDataname}
                         </TitleHero>
                         <DescriptionHero className="description-hero">
-                            Lorem ipsum dolor sit
-                            amet consectetur
-                            adipisicing elit. A
-                            sed voluptatum libero
-                            ipsa numquam velit
-                            quas accusantium
-                            alias, rem repudiandae
-                            distinctio, quis hic
-                            necessitatibus maiores
-                            qui et non, deleniti
-                            nam?
+                            {heroDatadescription}
                         </DescriptionHero>
                     </ModalBody>
                 </ModalContent>

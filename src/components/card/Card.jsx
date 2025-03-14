@@ -1,7 +1,9 @@
 import React from 'react';
 //import PropTypes from 'prop-types'
 //import fotoTest from '../../assets/wanda.jpg';
-import styled, { keyframes } from 'styled-components';
+import styled, {
+    keyframes
+} from 'styled-components';
 
 const Show = keyframes`
     0%{
@@ -38,10 +40,13 @@ const CardStyled = styled.div`
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
-    animation: ${Show} 2s ease-in , ${Scale} 0.5s ease-in;
+    animation:
+        ${Show} 2s ease-in,
+        ${Scale} 0.5s ease-in;
 
-    &:hover{
-        box-shadow: 0 0 0.8rem 0.1rem rgba(255, 254, 254, 0.5);
+    &:hover {
+        box-shadow: 0 0 0.8rem 0.1rem
+            rgba(255, 254, 254, 0.5);
     }
 `;
 
@@ -54,11 +59,11 @@ const ImgAnimation = styled.img`
     height: 200px;
     margin: 0 auto !important;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 3px;
     cursor: pointer;
+    transition: transform 0.3s ease !important;
     &:hover {
-        animation:
-            ${ScaleTwo} 2s ease-in;
+        animation: ${ScaleTwo} 2s ease-in;
     }
 `;
 
@@ -86,7 +91,7 @@ const BtnStyle = styled.button`
     }
 `;
 
-const Card = ({ name, image }) => {
+const Card = ({ name, image, onclick }) => {
     return (
         <>
             <CardStyled
@@ -99,16 +104,16 @@ const Card = ({ name, image }) => {
                         alt={name}
                         title={name}
                         className="img-fluid img-animation"
-                        style={{
-                            
-                        }}
                     />
                 </CardImgContent>
                 <div className="card-body d-flex flex-column">
                     <span className="card-title">
                         {name}
                     </span>
-                    <BtnStyle className="btn btn-danger d-grid gap-2 d-lg-block">
+                    <BtnStyle
+                        className="btn btn-danger d-grid gap-2 d-lg-block"
+                        onClick={onclick}
+                    >
                         More info
                     </BtnStyle>
                 </div>
