@@ -173,7 +173,6 @@ const Modal = ({
         <>
             <ModalContainer
                 className="container-fluid modal-container"
-                onClick={handleModalShowOff}
             >
                 <ModalContent className="modal-content">
                     <div className="modal-header">
