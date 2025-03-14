@@ -212,7 +212,6 @@ const MarvelCharacters = ({
                 <ContainerCards
                     id="container-cards"
                     className="container-cards"
-                    ref={mainRef}
                 >
                     {characters.length === 0 &&
                     !initialMessage ? (
@@ -232,6 +231,7 @@ const MarvelCharacters = ({
                             <SectionCards
                                 id="section-cards"
                                 className="section-cards"
+                                ref={mainRef}
                             >
                                 {characters.map(
                                     (

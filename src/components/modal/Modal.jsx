@@ -165,11 +165,15 @@ const Modal = ({
     heroDatadescription,
     setShow
 }) => {
+
+    const handleModalShowOff = () => {
+        setShow(false);
+    }
     return (
         <>
             <ModalContainer
                 className="container-fluid modal-container"
-                onClick={() => setShow(false)}
+                onClick={handleModalShowOff}
             >
                 <ModalContent className="modal-content">
                     <div className="modal-header">
@@ -177,9 +181,7 @@ const Modal = ({
                             type="button"
                             className="btn-close"
                             title="close"
-                            onClick={() =>
-                                setShow(false)
-                            }
+                            onClick={handleModalShowOff}
                         ></CloseModal>
                     </div>
                     <ModalBody className="modal-body">
