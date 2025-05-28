@@ -6,13 +6,16 @@ import { devices } from '../../utils/constantes';
 
 const HeroContainer = styled.div`
     max-width: 100%;
-    height: 100%;
+    height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: url(${marvel}) !important;
-    
+    object-fit: fill !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
     width: 100%;
 
     @media only screen and (${devices.iphone14}) {
